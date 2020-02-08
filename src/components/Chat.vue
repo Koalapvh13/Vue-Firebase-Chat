@@ -124,6 +124,8 @@ export default {
   height: 500px;
   width: 100%;
   overflow: scroll;
+  margin-bottom: 50px;
+  overflow-x: hidden;
 }
 .chat-item {
   border: none;
@@ -153,6 +155,8 @@ export default {
 .chat-message {
   width: 80%;
   min-height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .chat-message .right-bubble {
   position: relative;

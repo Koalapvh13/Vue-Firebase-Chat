@@ -18,35 +18,34 @@
 </template>
 
 <script>
-import firebase from "../Firebase";
-import router from "../router";
-
+import firebase from '../Firebase'
+import router from '../router'
 export default {
-  name: "AddBoard",
-  data() {
+  name: 'AddBoard',
+  data () {
     return {
-      ref: firebase.database().ref("chatrooms/"),
-      room: { roomName: "" }
-    };
+      ref: firebase.database().ref('chatrooms/'),
+      room: { roomName: '' }
+    }
   },
   methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-
-      let newData = this.ref.push();
+    onSubmit (evt) {
+      evt.preventDefault()
+      let newData = this.ref.push()
       newData.set({
         roomName: this.room.roomName
-      });
-      router.go(-1).catch(error => {
-        alert("Error adding document: ", error);
+      })
+      router.go(-1)
+      .catch((error) => {
+        alert("Error adding document: ", error)
       });
     }
   }
-};
+}
 </script>
 
 <style>
-.jumbotron {
-  padding: 2rem;
-}
+  .jumbotron {
+    padding: 2rem;
+  }
 </style>
